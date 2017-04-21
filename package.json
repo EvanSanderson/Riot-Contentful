@@ -1,0 +1,17 @@
+{
+  "name": "riot-contentful",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "dependencies": {
+    "browserify": "^14.3.0",
+    "contentful": "^4.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server",
+    "bundle": "watchify test.js -o bundle.js"
+  },
+  "author": "evan",
+  "license": "ISC"
+}
