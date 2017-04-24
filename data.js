@@ -11,4 +11,4 @@ const client = contentful.createClient({
 
 console.log('\x1b[32m Fetching entries ... \x1b[32m')
 
-module.exports = client.getEntries();
+module.exports = client;

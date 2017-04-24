@@ -12,7 +12,7 @@ const client = contentful.createClient({
 
 console.log('\x1b[32m Fetching entries ... \x1b[32m')
 
-module.exports = client.getEntries();
+module.exports = client;
 
 },{"contentful":2}],2:[function(require,module,exports){
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -10864,9 +10864,18 @@ module.exports = function(module) {
 },{}],3:[function(require,module,exports){
 var data = require('./data.js')
 
-data.then(function(entries) {
+data.getEntries({
+  'content_type': 'product'
+}).then(function(entries) {
     console.log(entries.items)
     riot.mount("zoo", { items: entries.items});
 });
+
+data.getEntries({
+  'content_type': 'test'
+}).then(function(entries){
+  console.log(entries.items)
+  riot.mount('blog', { items: entries.items});
+})
 
 },{"./data.js":1}]},{},[3]);
